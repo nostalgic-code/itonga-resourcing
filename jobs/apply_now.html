@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+</head>
+<body>
+    <form id="hire-form" action="upload_applications.php" method="POST" enctype="multipart/form-data">
+        <div class="field padding-bottom--24">
+            <label for="full_name">Full Name</label>
+            <input type="text" name="full_name" required>
+        </div>
+        <div class="field padding-bottom--24">
+            <label for="email">Email</label>
+            <input type="email" name="email" required>
+        </div>
+        <div class="field padding-bottom--24">
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="phone" required>
+        </div>
+        <div class="field padding-bottom--24">
+            <label for="cover">Cover Letter</label>
+            <input type="text" name="cover" required>
+        </div>
+
+        <!-- Added resume upload field -->
+        <div class="field padding-bottom--24">
+            <label for="resume">Upload CV/Resume (PDF or Word)</label>
+            <input type="file" name="resume" accept=".pdf, .doc, .docx" required>
+        </div>
+        <div class="field padding-bottom--24">
+            <input type="submit" name="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="../style.css">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+      <style>
+         #application-form {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
+
+#application-form h3 {
+    font-size: 1.5rem;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#hire-form .field {
+    margin-bottom: 16px;
+}
+
+#hire-form label {
+    display: block;
+    font-size: 0.9rem;
+    color: #555555;
+    margin-bottom: 8px;
+}
+
+#hire-form input[type="text"],
+#hire-form input[type="email"],
+#hire-form input[type="tel"],
+#hire-form input[type="file"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#hire-form input[type="text"]:focus,
+#hire-form input[type="email"]:focus,
+#hire-form input[type="tel"]:focus,
+#hire-form input[type="file"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+#hire-form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #005f5e;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#hire-form input[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+#hire-form input[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+      </style>
+   </head>
+
+   <body>
+
+      <header>
+         <div id="navbar" class="obj-width">
+            <a href="../index.html"><img class="logo" src="../images/logo.webp" alt=""></a>
+
+            <ul id="menu">
+               <li><a href="../index.html">Home</a></li>
+               <li><a href="../jobs/job.html">Browse Jobs</a></li>
+               <li><a href="../contact.html">Contact</a></li>
+               <a href="hire_us.html">
+                  <button id="w-btn" class="reverse">Hire Us!</button>
+              </a>
+            </ul>
+
+            <i id="bar" class='bx bx-menu'></i>
+         </div>
+      </header>
+
+      <div id="jobDetails" class="extra-space obj-width">
+         <!-- Job Details Section -->
+      </div>
+
+      <div id="application-form" class="obj-width">
+         <h3 class="form-title">Apply for this Job</h3>
+         <form id="hire-form" action="upload_applications.php" method="POST" enctype="multipart/form-data">
+             <input type="hidden" name="job_id" id="job-id">
+             <input type="hidden" name="job_title" id="job-title">
+     
+             <div class="field">
+                 <label for="full_name">Full Name</label>
+                 <input type="text" name="full_name" required>
+             </div>
+             <div class="field">
+                 <label for="email">Email</label>
+                 <input type="email" name="email" required>
+             </div>
+             <div class="field">
+                 <label for="phone">Phone Number</label>
+                 <input type="tel" name="phone" required>
+             </div>
+             <div class="field">
+                 <label for="cover">Cover Letter</label>
+                 <input type="text" name="cover" required>
+             </div>
+             <div class="field">
+                 <label for="resume">Upload CV/Resume (PDF or Word)</label>
+                 <input type="file" name="resume" accept=".pdf, .doc, .docx" required>
+             </div>
+             <div class="field">
+                 <input type="submit" name="submit" value="Submit">
+             </div>
+         </form>
+     </div>
+     
+      <footer class="footer">
+         <div class="obj-width">
+            <div class="top">
+               <div>
+                  <img class="logo" src="../images/logo.webp" alt="">
+                  <p>Search your desired jobs.</p>
+               </div>
+               <div>
+                  <a href="https://fontawesome.com/">
+                     <i class='bx bxl-facebook-square'></i>
+                  </a>
+                  <a href="https://fontawesome.com/">
+                     <i class='bx bxl-instagram-alt'></i>
+                  </a>
+                  <a href="https://fontawesome.com/">
+                     <i class='bx bxl-behance'></i>
+                  </a>
+                  <a href="https://fontawesome.com/">
+                     <i class='bx bxl-twitter'></i>
+                  </a>
+               </div>
+            </div>
+
+            <div class="bottom">
+               <div>
+                  <h3>Project</h3>
+                     <a href="#">Changelog</a>
+                     <a href="#">Status</a>
+                     <a href="#">License</a>
+                     <a href="#">All Versions</a>
+               </div>
+               <div>
+                  <h3>Community</h3>
+                  <a href="#">GitHub</a>
+                  <a href="#">Issues</a>
+                  <a href="#">Project</a>
+                  <a href="#"> Twitter</a>
+               </div>
+               <div>
+                  <h3>Help</h3>
+                  <a href="#">Support</a>
+                  <a href="#">Troubleshooting</a>
+                  <a href="#">Contact Us</a>
+               </div>
+               <div>
+                  <h3>Others</h3>
+                  <a href="#">Terms of Service</a>
+                  <a href="#">Privacy Policy</a>
+                  <a href="#">License</a>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <script>
+         document.addEventListener("DOMContentLoaded", () => {
+
+            // Get the job ID from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const index = urlParams.get("id");
+
+            // Assuming `jCategory` is an array of job objects
+            const selectedJob = jCategory[index];
+
+            // Update job details section
+            const jobDetailsContainer = document.getElementById("jobDetails");
+            jobDetailsContainer.innerHTML = `
+               <div class="job-header">
+                  <div class="job-img-row">
+                     <img src="${selectedJob.image}" alt="">
+                     <div>
+                        <h2>${selectedJob.companyName}</h2>
+                        <span>${selectedJob.location}</span>
+                     </div>
+                  </div>
+                  <a id="g-btn" href="#">Apply Now</a>
+               </div>
+
+               <div class="features obj-width">
+                  <div class="fe-box">
+                     <div>
+                        <img src="../images/vacancy.png" alt="">
+                        <h3>Vacancy</h3>
+                        <p>${selectedJob.vacancy}</p>
+                     </div>
+                     <div>
+                        <img src="../images/fe 1.png" alt="">
+                        <h3>Position</h3>
+                        <p>${selectedJob.jobTitle}</p>  <!-- Displaying job title here -->
+                     </div>
+                     <div>
+                        <img src="../images/hour.png" alt="">
+                        <h3>Hours</h3>
+                        <p>${selectedJob.hours}</p>
+                     </div>
+                     <div>
+                        <img src="../images/salary.png" alt="">
+                        <h3>Salary</h3>
+                        <p>${selectedJob.rate}</p>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="job-description sec-space">
+                  <h3>Job Description</h3>
+                  <p>${selectedJob.description}</p>
+
+                  <h3>Employment Status</h3>
+                  <p>- ${selectedJob.av}</p>
+
+                  <h3>Workplace</h3>
+                  <p>- ${selectedJob.workplace}</p>
+
+                  <h3>Educational Requirements</h3>
+                  <p>- ${selectedJob.education}</p>
+
+                  <h3>Experience Requirements</h3>
+                  <p>- ${selectedJob.experience}</p>
+               </div>
+            `;
+
+            // Set the Job ID and Job Title in the hidden form fields
+            const jobIdField = document.getElementById("job-id");
+            jobIdField.value = selectedJob.id;
+
+            const jobTitleField = document.getElementById("job-title");
+            jobTitleField.value = selectedJob.jobTitle;
+         });
+
+      </script>
+
+      <script src="job-List.js"></script>
+      <script src="../toggle.js"></script>
+
+   </body>
+
+</html>

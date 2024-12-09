@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Reveal Example</title>
+    <style>
+        /* Styling for text reveal animation */
+        .text-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            color: #333; /* Ensures text is visible */
+            font-size: 1.2rem;
+        }
+        
+        /* Body styling to center the content */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 200vh; /* Ensures page has scroll */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-reveal content">
+        <h2>Explore Our Specialised Offerings</h2>
+        <p>We connect exceptional tech talent with opportunities that drive innovation. Our recruitment expertise spans from software engineers and data scientists to UX designers and IT project managers, ensuring companies find the specialized skills they need. With a deep understanding of the tech landscape, we streamline the hiring process, delivering top candidates who match both the technical requirements and the company culture.</p>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+        // Applying ScrollReveal animation
+        ScrollReveal().reveal('.text-reveal', {
+            delay: 200,
+            distance: '50px',
+            origin: 'bottom',
+            opacity: 0,
+            duration: 800,
+            reset: true,
+            easing: 'ease-out'
+        });
+    </script>
+</body>
+</html>

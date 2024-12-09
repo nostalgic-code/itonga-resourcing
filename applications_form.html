@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll and Unscroll Effect</title>
+    <style>
+        /* Base styles for centering and scrolling */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 200vh; /* Makes the page taller for scrolling */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5; /* Optional background for better contrast */
+            font-family: Arial, sans-serif;
+        }
+
+        .data-text {
+            display: flex;
+            gap: 0.5rem; /* Space between words */
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .word {
+            opacity: 1; /* Faintly visible by default */
+            color: rgba(68, 68, 68, 0.5); /* Default light color */
+            transition: opacity 0.5s ease, color 0.5s ease; /* Smooth transition */
+        }
+
+        .word.revealed {
+            opacity: 1; /* Fully visible */
+            color: #000; /* Final reveal color */
+        }
+
+        .word.unscrolled {
+            opacity: 1; /* Return to default faint visibility */
+            color: rgba(68, 68, 68, 0.5); /* Light color */
+        }
+    </style>
+</head>
+<body>
+    <!-- Wrapping each word in a span -->
+    <div class="data-text">
+        <span class="word">Your</span>
+        <span class="word">Trusted</span>
+        <span class="word">Partner</span>
+        <span class="word">in</span>
+        <span class="word">Recruitment</span>
+    </div>
+
+    <script>
+        let lastScrollTop = 0; // Track the previous scroll position
+
+        window.addEventListener("scroll", function () {
+            const words = document.querySelectorAll(".word");
+            const textPosition = words[0].getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+
+            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Determine if scrolling down or up
+            const isScrollingDown = currentScrollTop > lastScrollTop;
+
+            if (textPosition < screenPosition) {
+                words.forEach((word, index) => {
+                    setTimeout(() => {
+                        if (isScrollingDown) {
+                            word.classList.remove("unscrolled");
+                            word.classList.add("revealed");
+                        } else {
+                            word.classList.remove("revealed");
+                            word.classList.add("unscrolled");
+                        }
+                    }, index * 300); // Delay each word reveal/unreveal
+                });
+            } else {
+                words.forEach((word) => {
+                    word.classList.remove("revealed");
+                    word.classList.add("unscrolled");
+                });
+            }
+
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Update lastScrollTop
+        });
+    </script>
+</body>
+</html>

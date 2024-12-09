@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Container Styling */
+.slideshow-container {
+  position: relative;
+  width: 100%; /* Adjust to desired size */
+  height: 400px; /* Adjust to desired size */
+  overflow: hidden;
+}
+
+/* Slides */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1.5s ease; /* Smooth transition */
+}
+
+/* Show first image initially */
+.slide:first-child {
+  opacity: 1;
+}
+
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <!-- Image 1 -->
+        <div class="slide">
+          <img src="https://images.pexels.com/photos/1036642/pexels-photo-1036642.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Image 1">
+        </div>
+        <!-- Image 2 -->
+        <div class="slide">
+          <img src="https://images.pexels.com/photos/8728558/pexels-photo-8728558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 2">
+        </div>
+        <!-- Image 3 -->
+        <div class="slide">
+          <img src="https://images.pexels.com/photos/6499014/pexels-photo-6499014.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 3">
+        </div>
+      </div>
+
+
+
+      <script>
+        let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showNextSlide() {
+  slides[currentSlide].style.opacity = '0'; // Hide current slide
+  currentSlide = (currentSlide + 1) % slides.length; // Go to the next slide
+  slides[currentSlide].style.opacity = '1'; // Show the next slide
+}
+
+// Change image every 3 seconds
+setInterval(showNextSlide, 3000);
+
+      </script>
+      
+</body>
+</html>
